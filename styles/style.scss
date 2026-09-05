@@ -1,0 +1,39 @@
+// RESET
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: inherit;
+}
+
+*,
+*::before,
+* ::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+// RESET END
+
+// GLOBAL ELEMENTS
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+// GLOBAL ELEMENTS END
