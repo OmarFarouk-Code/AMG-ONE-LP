@@ -90,7 +90,6 @@
 
       <section class="powertrain">
         <div class="powertrain__container">
-            
           <div class="powertrain__header">
             <p class="powertrain__header-title">01 — PROPULSION SYSTEM</p>
             <p class="powertrain__header-description">
@@ -138,7 +137,6 @@
           </div>
 
           <div class="powertrain__split powertrain__split-reverse">
-
             <div class="powertrain__media">
               <img
                 class="powertrain__engine-img"
@@ -173,11 +171,203 @@
                 </div>
               </div>
             </div>
-
           </div>
-          
         </div>
       </section>
+
+      <section class="acoustic">
+        <div class="acoustic__container">
+          <div class="acoustic__header">
+            <p class="acoustic__eyebrow">02 — ACOUSTIC SIGNATURE & TELEMETRY</p>
+
+            <div class="acoustic__titles">
+              <h2 class="acoustic__maintitle">THE SOUND OF 11,000 RPM.</h2>
+              <p class="acoustic__sectitle">
+                DIRECT FORMULA 1 V6 TURBO SOUNDTRACK
+              </p>
+            </div>
+          </div>
+
+          <div class="acoustic-console">
+            <div class="acoustic-console__visualizer">
+              <div class="acoustic-console__waveform">
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+                <div class="acoustic-console__bar"></div>
+              </div>
+            </div>
+
+            <div class="acoustic-console__grid">
+              <div class="acoustic-console__tracks">
+                <div
+                  class="acoustic-console__track acoustic-console__track--active"
+                  data-track="engine"
+                >
+                  <div class="acoustic-console__track-header">
+                    <img
+                      class="acoustic-console__track-icon"
+                      src="assets/icons/sound-icon.svg"
+                      alt=""
+                    />
+                    <div class="acoustic-console__track-name">
+                      AMG ONE engine sound
+                    </div>
+                  </div>
+                  <div class="acoustic-console__track-line"></div>
+                </div>
+
+                <div class="acoustic-console__track" data-track="driveby">
+                  <div class="acoustic-console__track-header">
+                    <img
+                      class="acoustic-console__track-icon"
+                      src="assets/icons/sound-icon.svg"
+                      alt=""
+                    />
+                    <div class="acoustic-console__track-name">Drive by</div>
+                  </div>
+                  <div class="acoustic-console__track-line"></div>
+                </div>
+              </div>
+
+              <div class="acoustic-console__ignition">
+                <button class="acoustic-console__button" id="ignitionButton">
+                  <!-- Metallic Ring -->
+                  <div class="acoustic-console__bezel">
+                    <!-- Inner dark part of the ring -->
+                    <div class="acoustic-console__button-face">
+                      <div class="acoustic-console__start-text">START</div>
+                      <div class="acoustic-console__divider"></div>
+                      <div class="acoustic-console__stop-text">STOP</div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              <div class="acoustic-console__tracks">
+                <div class="acoustic-console__track" data-track="ev">
+                  <div class="acoustic-console__track-header">
+                    <img
+                      class="acoustic-console__track-icon"
+                      src="assets/icons/sound-icon.svg"
+                      alt=""
+                    />
+                    <div class="acoustic-console__track-name">
+                      Acceleration in EV-Mode
+                    </div>
+                  </div>
+                  <div class="acoustic-console__track-line"></div>
+                </div>
+
+                <div class="acoustic-console__track" data-track="track">
+                  <div class="acoustic-console__track-header">
+                    <img
+                      class="acoustic-console__track-icon"
+                      src="assets/icons/sound-icon.svg"
+                      alt=""
+                    />
+                    <div class="acoustic-console__track-name">
+                      Acceleration in Track Mode
+                    </div>
+                  </div>
+                  <div class="acoustic-console__track-line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
     </main>
+    <script>
+      const trackFiles = {
+        engine: "assets/sounds/mercedes-amg-one-gas.mp3",
+        driveby: "assets/sounds/mercedes-amg-one-driveby.mp3",
+        ev: "assets/sounds/mercedes-ev-acc.mp3",
+        track: "assets/sounds/mercedes-amg-one-acceleration-0-100-kmh.mp3",
+      };
+
+      let currentTrackKey = "engine";
+      let isPlaying = false;
+      const audioPlayer = new Audio();
+
+      const ignitionButton = document.getElementById("ignitionButton");
+      const startText = document.querySelector(".acoustic-console__start-text");
+      const stopText = document.querySelector(".acoustic-console__stop-text");
+      const trackElements = document.querySelectorAll(
+        ".acoustic-console__track",
+      );
+      const waveform = document.querySelector(".acoustic-console__waveform");
+
+      function playCurrentTrack() {
+        audioPlayer.src = trackFiles[currentTrackKey];
+        audioPlayer.play();
+        isPlaying = true;
+
+        // Turn START white, STOP red
+        startText.style.color = "var(--color-warm-ivory)";
+        stopText.style.color = "var(--color-deep-red)";
+
+        // Start CSS wave animation
+        if (waveform) {
+          waveform.classList.add("acoustic-console__waveform--active");
+        }
+      }
+
+      function stopCurrentTrack() {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+        isPlaying = false;
+
+        // Turn START red, STOP white
+        startText.style.color = "var(--color-deep-red)";
+        stopText.style.color = "var(--color-warm-ivory)";
+
+        // Stop CSS wave animation
+        if (waveform) {
+          waveform.classList.remove("acoustic-console__waveform--active");
+        }
+      }
+
+      // When audio finishes on its own, reset everything
+      audioPlayer.addEventListener("ended", stopCurrentTrack);
+
+      // Ignition START/STOP button click
+      ignitionButton.addEventListener("click", () => {
+        if (isPlaying) {
+          stopCurrentTrack();
+        } else {
+          playCurrentTrack();
+        }
+      });
+
+      // Track list click
+      trackElements.forEach((track) => {
+        track.addEventListener("click", () => {
+          // 1. Remove active red styling from all tracks
+          trackElements.forEach((el) => {
+            el.classList.remove("acoustic-console__track--active");
+          });
+
+          // 2. Add active red styling to the clicked track
+          track.classList.add("acoustic-console__track--active");
+
+          // 3. Switch the active audio key
+          currentTrackKey = track.dataset.track;
+
+          // 4. If engine is already running, switch audio immediately
+          if (isPlaying) {
+            playCurrentTrack();
+          }
+        });
+      });
+    </script>
   </body>
 </html>

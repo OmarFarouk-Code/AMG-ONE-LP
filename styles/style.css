@@ -421,4 +421,289 @@ body {
   font-size: var(--font-size-28);
   font-weight: var(--font-weight-semi-bold);
   color: var(--color-obsidian-dark);
+}
+
+.acoustic__container {
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+  padding: 16rem 6.4rem;
+  width: 160rem;
+  margin: 0 auto;
+}
+
+.acoustic__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 0.1rem solid rgba(199, 201, 204, 0.0823529412);
+}
+
+.acoustic__eyebrow,
+.acoustic__sectitle {
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-11);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing);
+  color: #8a8a8e;
+}
+
+.acoustic__titles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.acoustic__maintitle {
+  font-family: var(--font-family-barlow-condensed);
+  font-size: var(--font-size-72);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-warm-ivory);
+}
+
+.acoustic__sectitle {
+  align-self: flex-end;
+}
+
+.acoustic-console {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6.4rem 3.2rem;
+  background-color: #0e0e0e;
+  border: 0.1rem solid rgba(199, 201, 204, 0.0823529412);
+  max-width: 250rem;
+  margin: 0 auto;
+}
+
+.acoustic-console__visualizer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  margin-bottom: 4.8rem;
+}
+
+.acoustic-console__waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.acoustic-console__bar {
+  width: 0.3rem;
+  background-color: var(--color-deep-red);
+  border-radius: 3rem;
+}
+
+.acoustic-console__bar:nth-child(1),
+.acoustic-console__bar:nth-child(5),
+.acoustic-console__bar:nth-child(10) {
+  height: 0.8rem;
+}
+
+.acoustic-console__bar:nth-child(3),
+.acoustic-console__bar:nth-child(7) {
+  height: 1.2rem;
+}
+
+.acoustic-console__bar:nth-child(2) {
+  height: 1.6rem;
+}
+
+.acoustic-console__bar:nth-child(4),
+.acoustic-console__bar:nth-child(9) {
+  height: 2rem;
+}
+
+.acoustic-console__bar:nth-child(6) {
+  height: 2.4rem;
+}
+
+.acoustic-console__bar:nth-child(8) {
+  height: 0.4rem;
+}
+
+@keyframes wavePulse {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1.2);
+  }
+}
+.acoustic-console__waveform--active .acoustic-console__bar {
+  animation: wavePulse 0.8s ease-in-out infinite alternate;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(7) {
+  animation-delay: 0.1s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(8) {
+  animation-delay: 0.45s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(9) {
+  animation-delay: 0.2s;
+}
+
+.acoustic-console__waveform--active .acoustic-console__bar:nth-child(10) {
+  animation-delay: 0.3s;
+}
+
+.acoustic-console__grid {
+  display: flex;
+  align-items: center;
+  gap: 12rem;
+}
+
+.acoustic-console__tracks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.6rem;
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  color: #8a8a8e;
+}
+
+.acoustic-console__tracks:first-child {
+  flex: 1;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.acoustic-console__tracks:last-child {
+  flex: 1;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.acoustic-console__track-header {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.acoustic-console__button {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.acoustic-console__bezel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 0.4rem;
+  background: linear-gradient(to bottom, var(--color-metallic-silver), #1a1a1a, #2a2a2a);
+}
+
+.acoustic-console__button-face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+  letter-spacing: 0.3rem;
+  color: var(--color-warm-ivory);
+  background: linear-gradient(to bottom, #201f1f, #151515, #0a0a0a);
+  border: 0.1rem solid #353534;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.acoustic-console__track {
+  cursor: pointer;
+}
+
+.acoustic-console__track--active {
+  color: var(--color-deep-red);
+}
+
+.acoustic-console__start-text {
+  color: var(--color-deep-red);
+  transition: all 0.3s ease-out;
+}
+
+.acoustic-console__stop-text {
+  transition: all 0.3s ease-out;
+}
+
+.acoustic-console__start-text:hover,
+.acoustic-console__stop-text:hover {
+  scale: 1.1;
+  color: var(--color-warm-ivory);
+}
+
+.acoustic-console__track-icon {
+  opacity: 0;
+}
+
+.acoustic-console__track--active .acoustic-console__track-icon {
+  opacity: 1;
+}
+
+.acoustic-console__divider {
+  width: 6rem;
+  height: 0.1rem;
+  background-color: rgba(199, 201, 204, 0.3294117647);
+}
+
+.acoustic-console__track-line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: #353534;
+}
+
+.acoustic-console__track--active .acoustic-console__track-line {
+  background-color: var(--color-deep-red);
+}
+
+.acoustic-console__track-name {
+  transition: all 0.3s ease-out;
+}
+
+.acoustic-console__track-name:hover {
+  scale: 1.05;
 }/*# sourceMappingURL=style.css.map */
