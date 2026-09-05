@@ -293,3 +293,145 @@ body {
 }
 
 // HERO SECTION END
+
+// POWERTRAIN SECTION
+.powertrain {
+  background-color: var(--color-warm-ivory);
+}
+
+.powertrain__container {
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+  max-width: 160rem;
+  padding: 16rem 6.4rem;
+  margin: 0 auto;
+}
+
+.powertrain__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-11);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing);
+  padding-bottom: 1.2rem;
+  border-bottom: 0.1rem solid #0a0a0a60;
+}
+
+.powertrain__header-title {
+  color: var(--color-obsidian-dark);
+}
+
+.powertrain__header-description {
+  color: #0a0a0a60;
+}
+
+.powertrain__split {
+  display: flex;
+  align-items: center;
+  gap: 6.4rem;
+}
+
+.powertrain__split-reverse{
+    flex-direction: row-reverse;
+}
+
+.powertrain__media {
+  width: 58%;
+  position: relative;
+}
+
+.powertrain__engine-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.powertrain__caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: var(--color-obsidian-dark);
+  color: var(--color-warm-ivory);
+  padding: 0.4rem 0.8rem;
+  font-size: var(--font-size-11);
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-hanken-grotesk);
+  line-height: 2;
+  letter-spacing: 0.1rem;
+}
+
+.powertrain__content {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.powertrain__eyebrow {
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-11);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing);
+  text-align: left;
+  color: #8a8a8e;
+  margin-bottom: 1rem;
+}
+
+.powertrain__title {
+  font-family: var(--font-family-barlow-condensed);
+  font-size: var(--font-size-44);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--color-obsidian-dark);
+  line-height: 0.9;
+  margin-bottom: 1.6rem;
+}
+
+.powertrain__description {
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  color: #0a0a0ac7;
+  margin-bottom: 2.4rem;
+}
+
+.powertrain__separator {
+  border-bottom: 0.1rem solid #0a0a0a20;
+  margin-bottom: 1.6rem;
+}
+
+.powertrain__metrics {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.powertrain__metric {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 1rem;
+  width: 50%;
+}
+
+.metric__title {
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-11);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing);
+  color: #8a8a8e;
+}
+
+.metric__value {
+  font-family: var(--font-family-barlow-condensed);
+  font-size: var(--font-size-28);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--color-obsidian-dark);
+}
+
+// POWERTRAIN SECTION END
