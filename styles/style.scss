@@ -8,6 +8,11 @@
   --font-family-barlow-condensed: "Barlow Condensed", sans-serif;
   --font-family-hanken-grotesk: "Hanken Grotesk", sans-serif;
   --font-family-jetbrains-mono: "JetBrains Mono", sans-serif;
+  --font-family-serif: serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
   --font-size-120: 12rem;
   --font-size-72: 7.2rem;
   --font-size-56: 5.6rem;
@@ -64,5 +69,88 @@ html {
 
 body {
   font-size: 1.6rem;
+  background-color: var(--color-obsidian-dark);
 }
 // GLOBAL ELEMENTS END
+
+// HEADER
+.header {
+  width: 100%;
+  background-color: #0e0e0ed9;
+  border-bottom: 0.1rem solid #c5c7ca33;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 160rem;
+  width: 100%;
+  padding: 0 6.4rem;
+  margin: 0 auto;
+}
+
+.header__logocontent {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-desktop);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-desktop);
+}
+
+.header__amg-img {
+  max-width: 100%;
+  width: 10rem;
+  aspect-ratio: 1/1;
+  background-color: transparent;
+}
+
+.header__one {
+  color: #c7c9cc;
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-26);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.24rem;
+}
+.header__eperformance {
+  color: #e1bfbb;
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.12rem;
+  font-family: var(--font-family-serif);
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.header__link {
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-12);
+  letter-spacing: 0.24rem;
+  font-weight: var(--font-weight-semi-bold);
+  color: #e1bfbb;
+  text-decoration: none;
+}
+
+.header__allocation {
+  padding: 0.8rem 1.6rem;
+  border: 0.1rem solid #c7c9cc4b;
+}
+
+.header__allocationlink {
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-11);
+  letter-spacing: 0.22rem;
+  font-weight: var(--font-weight-bold);
+  color: #f5f4f2;
+  text-decoration: none;
+}
+
+// HEADER END
