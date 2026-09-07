@@ -68,6 +68,8 @@ ol {
 // GLOBAL ELEMENTS
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
 }
 
 body {
@@ -143,11 +145,22 @@ body {
   font-weight: var(--font-weight-semi-bold);
   color: #e1bfbb;
   text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+.header__link:hover {
+  scale: 1.1;
+  color: var(--color-deep-red);
+}
+
+.header__link:active {
+  scale: 0.9;
 }
 
 .header__allocation {
   padding: 0.8rem 1.6rem;
   border: 0.1rem solid #c7c9cc4b;
+  transition: all 0.3s ease-out;
 }
 
 .header__allocationlink {
@@ -157,6 +170,15 @@ body {
   font-weight: var(--font-weight-bold);
   color: #f5f4f2;
   text-decoration: none;
+}
+
+.header__allocation:hover {
+  scale: 1.1;
+  background-color: var(--color-deep-red);
+}
+
+.header__allocation:active {
+  scale: 0.98;
 }
 
 // HEADER END
@@ -269,6 +291,16 @@ body {
 .hero__cta {
   padding: 1.2rem 3.2rem;
   border: 0.1rem solid #c7c9cc54;
+  transition: all 0.3s ease-out;
+}
+
+.hero__cta:hover {
+  scale: 1.1;
+  background-color: var(--color-deep-red);
+}
+
+.hero__cta:active {
+  scale: 0.98;
 }
 
 .hero__cta-link {
@@ -350,6 +382,12 @@ body {
   height: auto;
   display: block;
   object-fit: cover;
+  filter: saturate(0%) contrast(125%);
+  transition: all 0.5s ease-out;
+}
+
+.powertrain__engine-img:hover {
+  filter: saturate(100%) contrast(100%);
 }
 
 .powertrain__caption {
@@ -1462,7 +1500,7 @@ body {
   color: #c5c7ca70;
 }
 
-.footer__link:hover{
+.footer__link:hover {
   scale: 1.1;
   color: var(--color-deep-red);
 }
