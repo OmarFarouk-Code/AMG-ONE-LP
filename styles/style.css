@@ -68,6 +68,15 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   scroll-padding-top: 8rem;
+  /* For Firefox */
+  scrollbar-width: none;
+  /* For Internet Explorer and Legacy Edge */
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body {
