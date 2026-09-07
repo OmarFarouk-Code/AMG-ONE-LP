@@ -940,4 +940,206 @@ body {
   font-size: var(--font-size-13);
   font-weight: var(--font-weight-regular);
   color: rgba(10, 10, 10, 0.7882352941);
+}
+
+.configuration__container {
+  display: flex;
+  flex-direction: column;
+  padding: 16rem 6.4rem;
+  margin: 0 auto;
+  width: 160rem;
+  gap: 6.4rem;
+}
+
+.configuration__container .powertrain__header {
+  border-bottom: 0.1rem solid rgba(199, 201, 204, 0.1254901961);
+}
+
+.configuration__container .powertrain__header-title {
+  color: #e5e2e1;
+}
+
+.configuration__container .powertrain__header-description {
+  color: #8a8a8e;
+}
+
+.configuration__body {
+  display: flex;
+  gap: 6rem;
+  color: white;
+}
+
+.configuration__stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6.1rem 2.4rem;
+  background-color: #1c1c1e;
+  border: 0.1rem solid rgba(199, 201, 204, 0.1254901961);
+  width: 70%;
+}
+
+.configuration__stage-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-11);
+  letter-spacing: 0.11rem;
+}
+
+.configuration__body-color {
+  font-weight: var(--font-weight-bold);
+  color: #e5e2e1;
+}
+
+.configuration__rim-type {
+  font-weight: var(--font-weight-regular);
+  color: #8a8a8e;
+}
+
+.configuration__stage-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.configuration__img {
+  max-width: 100%;
+}
+
+.configuration__stage-footer {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-11);
+  letter-spacing: 0.11rem;
+  font-weight: var(--font-weight-regular);
+  color: #8a8a8e;
+}
+
+.configuration__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  width: 30%;
+}
+
+.configuration__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.configuration__group-title {
+  font-family: var(--font-family-hanken-grotesk);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-11);
+  letter-spacing: var(--letter-spacing);
+  color: #8a8a8e;
+}
+
+.configuration__options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.configuration__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  background-color: #1c1c1e;
+  width: 100%;
+  border: 0.1rem solid rgba(199, 201, 204, 0.1254901961);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.configuration__card:hover {
+  scale: 1.05;
+  border: 0.1rem solid white;
+}
+
+.configuration__card:active {
+  scale: 0.98;
+}
+
+.configuration__card--active {
+  border: 0.1rem solid var(--color-deep-red);
+}
+
+.configuration__card--active .configuration__card-status {
+  color: var(--color-deep-red);
+}
+
+.configuration__card-content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.configuration__card-title {
+  font-weight: var(--font-weight-bold);
+  color: #e5e2e1;
+  font-family: var(--font-family-hanken-grotesk);
+  font-size: var(--font-size-11);
+  letter-spacing: 0.05rem;
+}
+
+.configuration__swatch {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 0.2rem solid rgba(199, 201, 204, 0.1254901961);
+}
+
+.configuration__swatch--silver {
+  background-color: var(--color-metallic-silver);
+}
+
+.configuration__swatch--black {
+  background-color: var(--color-obsidian-dark);
+}
+
+.configuration__swatch--petronas {
+  background-color: #00a19b;
+}
+
+.configuration__swatch--red {
+  background-color: var(--color-deep-red);
+}
+
+.configuration__swatch--emerald {
+  background-color: #002e2c;
+}
+
+.configuration__card-status {
+  font-family: var(--font-family-hanken-grotesk);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-11);
+  letter-spacing: var(--letter-spacing);
+  color: #8a8a8e;
+}
+
+.configuration__group:nth-child(2) .configuration__card-content {
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.configuration__card-description {
+  font-family: var(--font-family-hanken-grotesk);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-11);
+  color: #8a8a8e;
 }/*# sourceMappingURL=style.css.map */

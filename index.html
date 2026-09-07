@@ -389,9 +389,7 @@
                 </div>
               </div>
 
-              <div
-                class="interior__hotspot interior__hotspot--shift"
-              >
+              <div class="interior__hotspot interior__hotspot--shift">
                 <div class="interior__hotspot-pin">
                   <span class="interior__hotspot-dot"></span>
                 </div>
@@ -453,6 +451,165 @@
                   Zero compliance backrests optimize sensory feedback directly
                   through the spine.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="configuration">
+        <div class="configuration__container">
+          <div class="powertrain__header">
+            <p class="powertrain__header-title">04 — CONFIGURATION</p>
+            <p class="powertrain__header-description">
+              CONFIGURATION BAY AFFALTERBACH
+            </p>
+          </div>
+
+          <div class="configuration__body">
+            <div class="configuration__stage">
+              <div class="configuration__stage-header">
+                <p class="configuration__body-color" id="configColorLabel">
+                  HIGH-TECH SILVER
+                </p>
+                <p class="configuration__rim-type" id="configWheelLabel">
+                  AERODYNAMICS: FORGED MAGNESIUM AEROBLADES
+                </p>
+              </div>
+
+              <div class="configuration__stage-media">
+                <img
+                  id="configStageImage"
+                  class="configuration__img"
+                  src="assets/configuration-pics/silver-magnesium.png"
+                  alt="configuration picture"
+                />
+              </div>
+
+              <div class="configuration__stage-footer">
+                STUDIO VIEW 07 · 90° PROFILE
+              </div>
+            </div>
+
+            <div class="configuration__panel">
+              <div class="configuration__group" id="exteriorGroup">
+                <h6 class="configuration__group-title">EXTERIOR</h6>
+                <div class="configuration__options">
+                  <div
+                    class="configuration__card configuration__card--active"
+                    data-color="silver"
+                    data-label="HIGH-TECH SILVER"
+                  >
+                    <div class="configuration__card-content">
+                      <div
+                        class="configuration__swatch configuration__swatch--silver"
+                      ></div>
+                      <div class="configuration__card-title">
+                        HIGH-TECH SILVER METALLIC
+                      </div>
+                    </div>
+                    <div class="configuration__card-status">SELECTED</div>
+                  </div>
+
+                  <div
+                    class="configuration__card"
+                    data-color="black"
+                    data-label="OBSIDIAN BLACK METALLIC"
+                  >
+                    <div class="configuration__card-content">
+                      <div
+                        class="configuration__swatch configuration__swatch--black"
+                      ></div>
+                      <div class="configuration__card-title">
+                        OBSIDIAN BLACK METALLIC
+                      </div>
+                    </div>
+                    <div class="configuration__card-status">OPTION</div>
+                  </div>
+
+                  <div
+                    class="configuration__card"
+                    data-color="petronas"
+                    data-label="PETRONAS EMERALD MOTORSPORT"
+                  >
+                    <div class="configuration__card-content">
+                      <div
+                        class="configuration__swatch configuration__swatch--petronas"
+                      ></div>
+                      <div class="configuration__card-title">
+                        PETRONAS EMERALD MOTORSPORT
+                      </div>
+                    </div>
+                    <div class="configuration__card-status">OPTION</div>
+                  </div>
+
+                  <div
+                    class="configuration__card"
+                    data-color="red"
+                    data-label="PATAGONIEN RED"
+                  >
+                    <div class="configuration__card-content">
+                      <div
+                        class="configuration__swatch configuration__swatch--red"
+                      ></div>
+                      <div class="configuration__card-title">
+                        PATAGONIEN RED
+                      </div>
+                    </div>
+                    <div class="configuration__card-status">OPTION</div>
+                  </div>
+
+                  <div
+                    class="configuration__card"
+                    data-color="emerald"
+                    data-label="DEEP EMERALD"
+                  >
+                    <div class="configuration__card-content">
+                      <div
+                        class="configuration__swatch configuration__swatch--emerald"
+                      ></div>
+                      <div class="configuration__card-title">DEEP EMERALD</div>
+                    </div>
+                    <div class="configuration__card-status">OPTION</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="configuration__group" id="wheelsGroup">
+                <h6 class="configuration__group-title">AERODYNAMIC WHEELS</h6>
+                <div class="configuration__options">
+                  <div
+                    class="configuration__card configuration__card--active"
+                    data-wheel="magnesium"
+                    data-label="AERODYNAMICS: FORGED MAGNESIUM AEROBLADES"
+                  >
+                    <div class="configuration__card-content">
+                      <div class="configuration__card-title">
+                        SPOKE FORGED MAGNESIUM
+                      </div>
+                      <div class="configuration__card-description">
+                        Integrated carbon-fiber aeroblades
+                      </div>
+                    </div>
+                    <div class="configuration__card-status">SELECTED</div>
+                  </div>
+
+                  <div
+                    class="configuration__card"
+                    data-wheel="aluminum"
+                    data-label="AERODYNAMICS: LIGHTWEIGHT MONOBLOCK"
+                  >
+                    <div class="configuration__card-content">
+                      <div class="configuration__card-title">
+                        SPOKE LIGHTWEIGHT FORGED
+                      </div>
+                      <div class="configuration__card-description">
+                        Monoblock high-tensile aluminum
+                      </div>
+                    </div>
+                    <div class="configuration__card-status">OPTION</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -539,6 +696,86 @@
           if (isPlaying) {
             playCurrentTrack();
           }
+        });
+      });
+    </script>
+    <script>
+      // Dynamic Configuration State
+      let selectedColor = "silver";
+      let selectedWheel = "magnesium";
+
+      const configImage = document.getElementById("configStageImage");
+      const configColorLabel = document.getElementById("configColorLabel");
+      const configWheelLabel = document.getElementById("configWheelLabel");
+
+      // Helper function to update the car view and UI text
+      function updateConfigurationView() {
+        // Construct the image filename based on color + wheel combination
+        const nextImagePath = `assets/configuration-pics/${selectedColor}-${selectedWheel}.png`;
+
+        // Update image source
+        if (configImage) {
+          configImage.src = nextImagePath;
+        }
+      }
+
+      // 1. Exterior Color Selection Listener
+      const exteriorCards = document.querySelectorAll(
+        "#exteriorGroup .configuration__card",
+      );
+      exteriorCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Reset classes and status labels in exterior group
+          exteriorCards.forEach((c) => {
+            c.classList.remove("configuration__card--active");
+            const status = c.querySelector(".configuration__card-status");
+            if (status) status.textContent = "OPTION";
+          });
+
+          // Mark clicked card active
+          card.classList.add("configuration__card--active");
+          const activeStatus = card.querySelector(
+            ".configuration__card-status",
+          );
+          if (activeStatus) activeStatus.textContent = "SELECTED";
+
+          // Update active color state & stage text
+          selectedColor = card.dataset.color;
+          if (configColorLabel && card.dataset.label) {
+            configColorLabel.textContent = card.dataset.label;
+          }
+
+          updateConfigurationView();
+        });
+      });
+
+      // 2. Wheel Type Selection Listener
+      const wheelCards = document.querySelectorAll(
+        "#wheelsGroup .configuration__card",
+      );
+      wheelCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Reset classes and status labels in wheels group
+          wheelCards.forEach((c) => {
+            c.classList.remove("configuration__card--active");
+            const status = c.querySelector(".configuration__card-status");
+            if (status) status.textContent = "OPTION";
+          });
+
+          // Mark clicked card active
+          card.classList.add("configuration__card--active");
+          const activeStatus = card.querySelector(
+            ".configuration__card-status",
+          );
+          if (activeStatus) activeStatus.textContent = "SELECTED";
+
+          // Update active wheel state & stage text
+          selectedWheel = card.dataset.wheel;
+          if (configWheelLabel && card.dataset.label) {
+            configWheelLabel.textContent = card.dataset.label;
+          }
+
+          updateConfigurationView();
         });
       });
     </script>
